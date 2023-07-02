@@ -1,0 +1,85 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+  
+              <div class="row">
+                  <div class="col-sm-8"><h2> <b>Utilisateurs</b></h2> <button mat-raised-button class="btn btn-warning pull-right"  routerLink="/AddUser">
+                        
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="19"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+                    <span>Ajouter</span>
+                  </button>
+
+                  <div >
+                    <button mat-raised-button class="btn btn-success pull-right" (click)="exportDataToExcel()">
+                      
+                      <i class="material-icons" viewBox="0 0 24 24" width="24" height="24">download</i><span>Exporter les Utilisateurs</span>
+                        
+                      </button>
+                      </div>
+                  </div>
+  
+  
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title ">Liste des utilisateurs</h4>
+                   
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                  <th>Matricule</th>
+                                  <th>Login</th>
+                                  <th>Nom</th>
+                                  <th>Prenom</th>
+                                  <th>Telephone</th>
+                                  <th>Date de Naissance</th>
+                                  <th>Rôle</th>
+                                  
+                                 
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let vehicule of data">
+                                      <td>{{ vehicule.matricule }}</td>
+                                      <td>{{ vehicule.login }}</td>
+                                      <td>{{ vehicule.nom}}</td>
+                                      <td>{{ vehicule.prenom }}</td>
+                                      <td>{{ vehicule.tel}}</td>
+                                      <td>{{ vehicule.dateDeNaissance | date:'dd/MM/yyyy' }}</td>
+                                      <td>{{ vehicule.role}}</td>
+                                        
+                                         
+                                          <a [routerLink]="['/editUser']"  [queryParams]="{ id:vehicule.id ,matricule:vehicule.matricule ,
+                                            login:vehicule.login,nom:vehicule.nom,prenom:vehicule.prenom,role:vehicule.role,
+                                            tel:vehicule.tel,dateDeNaissance:vehicule.dateDeNaissance}"  class="edit" title="Edit" data-toggle="tooltip">   
+                                              <i class="material-icons">&#xE254;</i></a>
+              
+
+                                          <a routerLink="/gestion-user" (click)="deleteItem(vehicule.id)" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                  </tr>
+                                 
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  

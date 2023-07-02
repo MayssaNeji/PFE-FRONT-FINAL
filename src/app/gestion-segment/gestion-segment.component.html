@@ -1,0 +1,84 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+  
+              <div class="row">
+                  <div class="col-sm-8"><h2> <b>Segments</b></h2> <button mat-raised-button class="btn btn-warning pull-right"  routerLink="/add-segment">
+                        
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="19"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+                    <span>Ajouter</span>
+                  </button>
+
+                  <div >
+                    <button mat-raised-button class="btn btn-success pull-right" (click)="exportDataToExcel()">
+                      
+                      <i class="material-icons" viewBox="0 0 24 24" width="24" height="24">download</i>
+                      <span>Exporter les Segments</span>
+                      
+                    </button>
+                      </div>
+                  </div>
+  
+  
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title ">Liste des Segments</h4>
+                       
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                  <th>Id</th>
+                                  <th>Nom</th>
+                                  <th>centre De Cout</th>
+                                  <th>nom Seg Sap Ref</th>
+                                  <th>RH Segment</th>
+                                  <th>chef de Segment</th>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let chauffeur of data">
+                                      <td>{{ chauffeur.id }}</td>
+                                      <td>{{ chauffeur.nom }}</td>
+                                      <td>{{ chauffeur.centreDeCout }}</td>
+                                      <td>{{ chauffeur.nomSegSapRef}}</td>
+                                      <td>{{ chauffeur.rhSegment }}</td>
+                                      <td>{{ chauffeur.chefDeSegment }}</td>
+                                    
+                                        
+                                         
+                                          <a  [routerLink]="['/editSegment']" [queryParams]="{ id: chauffeur.id ,nom:chauffeur.nom, centreDeCout:chauffeur.centreDeCout,
+                                            nomSegSapRef:chauffeur.nomSegSapRef,rhSegment:chauffeur.rhSegment,chefDeSegment:chauffeur.chefDeSegment }"  class="edit" title="Edit" data-toggle="tooltip">   
+                                              <i class="material-icons">&#xE254;</i></a>
+              
+                                            
+                                      
+              
+                                          <a routerLink="/gestion-segment" (click)="deleteItem(chauffeur.id)" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                  </tr>
+                                 
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  

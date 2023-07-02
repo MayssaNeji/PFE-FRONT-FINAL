@@ -1,0 +1,98 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+               
+
+
+
+
+  
+              <div class="row">
+                  <div class="col-sm-8"><h2> <b>Circuits</b></h2>
+                    
+                    <button mat-raised-button class="btn btn-warning pull-right"  routerLink="/add-circuit">
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="19"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+                        <span>Ajouter</span>
+                      </button>
+    
+                      <div >
+                        <button mat-raised-button class="btn btn-success pull-right" (click)="exportDataToExcel()">
+                          
+                          <i class="material-icons" viewBox="0 0 24 24" width="24" height="24">download</i>
+                          <span>Exporter les Circuits</span>
+                          
+                        </button>
+                      </div>
+                  </div>
+  
+  
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title ">Liste des circuits</h4>
+                    
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                  <th>Id</th>
+                                  <th>Reference Chemin</th>
+                                  <th>Reference station</th>
+                                  <th>nb Km</th>
+                                  <th>contribution Employé</th>
+                                  <th>cout/Km</th>
+                                  <th>point d'arrivée</th>
+                                  <th>Agence</th>
+                                 
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let circuit of data">
+                                      <td>{{ circuit.id }}</td>
+                                      <td>{{ circuit.refChemin }}</td>
+                                      <td>{{ circuit.refSapLeoni }}</td>
+                                      
+                                      <td>{{ circuit.nbKm }}</td>
+                                      <td>{{ circuit.contributionEmploye}}</td>
+                                      <td>{{ circuit.coutKm  }}</td>
+                                      <td>{{ circuit.pointArrivee  }}</td>
+                                      <td>{{ circuit.agence  }}</td>
+                                      
+                                    
+                                        
+                                         
+                                          <a [routerLink]="['/editCircuit']"class="edit"  [queryParams]="{ id: circuit.id , refSapLeoni:circuit.refSapLeoni,refChemin:circuit.refChemin,nbKm:circuit.nbKm,contributionEmploye:circuit.contributionEmploye,coutKm:circuit.coutKm,pointArrivee:circuit.pointArrivee,agence:circuit.agence}"title="Edit" data-toggle="tooltip">   
+                                              <i class="material-icons">&#xE254;</i></a>
+              
+                                            
+                                      
+              
+                                          <a routerLink="/gestion-circuit" (click)="deleteItem(circuit.id)" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                  </tr>
+                                 
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  

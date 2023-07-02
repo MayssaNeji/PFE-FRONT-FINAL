@@ -1,0 +1,63 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-info">
+              <h4 class="card-title">Modifier un segment</h4>
+            </div>
+            <div class="card-body">
+              <form [formGroup]="chauffeurForm">
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Nom du segment" formControlName="nom">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Centre de coûts du Segment" type="email" formControlName="centreDeCout">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Nom du segment SAPRef" type="text" formControlName="nomSegSapRef">
+                    </mat-form-field>
+                  </div>
+                </div>
+               
+                 
+                  <mat-form-field appearance="outline">
+                    <mat-label>Selectionner le chef de segment</mat-label>
+                    <mat-select formControlName="chefDeSegment">
+                      <mat-option *ngFor="let agence of chefSegment" [value]="agence.nom">{{ agence.nom + ' ' + agence.prenom }}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  
+                    
+                        
+                
+  
+                
+                <div>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Selectionner RH Segment</mat-label>
+                    <mat-select formControlName="rhSegment">
+                      <mat-option *ngFor="let agence of RHSegment" [value]="agence.nom">{{ agence.nom + ' ' + agence.prenom }}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  
+                </div>
+                <button mat-raised-button type="submit" (click)="updateChauf()" class="btn btn-info pull-right">Modifier le segment</button>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button routerLink="/gestion-segment" type="submit" class="btn btn-info pull-left">retouner a la page précedente</button>
+    </div>
+  </div>
+  

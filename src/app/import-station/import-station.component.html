@@ -1,0 +1,88 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+
+                <div class="card">
+                    <div class="card-header card-header-info">
+                      <h4 class="card-title">Importer la liste des stations</h4>
+                    </div>
+                 
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <mat-form-field class="example-full-width">
+                                <input type="file" #fileInput matInput >
+                              </mat-form-field>
+                              
+                            </div>
+                          
+                            <div class="col-md-4">
+                              <button mat-raised-button  (click)="upload(fileInput)" type="submit" class="btn btn-info pull-right">Importer</button>
+                            </div>
+                          
+                          </div>
+
+                        </div>
+                    
+                  </div>
+                  
+
+
+
+                   
+  
+  
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title ">Liste des stations</h4>
+                      
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                  <th>id</th>
+                                  <th>referenceRegion</th>
+                                  <th>refSapLeoni</th>
+                                  <th>longitude</th>
+                                  <th>latitude</th>
+                                  <th>rayon</th>
+                              
+                                
+                                </thead>
+                                <tbody>
+                                  
+                                    <tr *ngFor="let chauffeur of data">
+                                        <td>{{ chauffeur.id }}</td>
+                                        <td>{{ chauffeur.referenceRegion }}</td>
+                                        <td>{{ chauffeur.refSapLeoni }}</td>
+                                        <td>{{ chauffeur.longitude}}</td>
+                                        <td>{{ chauffeur.latitude}}</td>
+                                        <td>{{ chauffeur.rayon }}</td>
+                                    </tr>
+                                        
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  

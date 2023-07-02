@@ -1,0 +1,91 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-info">
+              <h4 class="card-title">Modifier l'utilisateur</h4>
+            </div>
+            <div class="card-body">
+              <form [formGroup]="segmentForm">
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Matricule" formControlName="matricule">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Nom" formControlName="nom">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Prénom" formControlName="prenom">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Téléphone" formControlName="tel">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Mot de passe" type="password" formControlName="password">
+                    </mat-form-field>
+                  </div>
+
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Email" type="Email" formControlName="login">
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div class="row">
+
+                   
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Date de naissance" type="date" formControlName="dateDeNaissance">
+                    </mat-form-field>
+                  </div>
+                  
+  
+                  <div  class="col-md-6">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Selectionner Le Role</mat-label>
+                      <mat-select  formControlName="role">
+                        <mat-option value="DG/RH"> DG/RH </mat-option>
+                        <mat-option value="Super Admin"> Super Admin </mat-option>
+                        <mat-option value="Responsable segment"> Responsable segment </mat-option>
+                        <mat-option value=""> PS Manager </mat-option>
+                        <mat-option value="Responsable de Transport"> Responsable de Transport </mat-option>
+                        <mat-option value="Agent SOS/SHE/PPE"> Agent SOS/SHE/PPE </mat-option>
+                        <mat-option value="Agent juridique">  Agent juridique</mat-option>
+                        <mat-option value="Agent de finance"> Agent de finance </mat-option>
+                        <mat-option value="Chef de Segment">  Chef de Segment</mat-option>
+                        <mat-option value="Agent de paie"> Agent de paie </mat-option>
+                        <mat-option value="Key user Transport"> Key user Transport </mat-option>
+                        <mat-option value="Admin">  Admin</mat-option>
+                       
+
+                      </mat-select>
+                    </mat-form-field>
+                    
+                        
+                  </div>
+                </div>
+                <button mat-raised-button type="submit" (click)="CreateUser(segmentForm.value, segmentForm.controls['password'].value)" class="btn btn-info pull-right">Modifier</button>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button routerLink="/gestion-user" type="submit" class="btn btn-info pull-left">Retourner à la page précédente</button>
+    </div>
+  </div>
+  

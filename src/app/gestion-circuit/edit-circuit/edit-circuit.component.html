@@ -1,0 +1,84 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title">Ajouter un circuit</h4>
+                       
+                    </div>
+                    <div class="card-body">
+                        <form  [formGroup]="chauffeurForm" >
+                            <div class="row">
+                                
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Reference du chemin" formControlName="refChemin">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="nombre de kilometre"  formControlName="nbKm">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                          
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="contribution des employés" type="text"  formControlName="contributionEmploye"  >
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="cout kilometre" type="text"  formControlName="coutKm"  >
+                                  </mat-form-field>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Point d'arrivée" type="text"  formControlName="pointArrivee"  >
+                                  </mat-form-field>
+                                </div>
+                               
+                            </div>
+                            
+                            <div>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Selectionner une station</mat-label>
+                                  <mat-select  formControlName="refSapLeoni">
+                                    <mat-option *ngFor="let agence of station" [value]="agence.refSapLeoni">{{agence.refSapLeoni}}</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                                
+                                    
+                              </div>
+  
+                            <div>
+                              <mat-form-field appearance="outline">
+                                <mat-label>Selectionner une agence</mat-label>
+                                <mat-select  formControlName="agence">
+                                  <mat-option *ngFor="let agence of agences" [value]="agence.nom">{{agence.nom}}</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                              
+                                  
+                            </div>
+  
+                           
+  
+                            <button mat-raised-button  (click)="updateChauf()"   type="submit" class="btn btn-info pull-right">Ajouter le circuit</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <button mat-raised-button routerLink="/gestion-circuit" type="submit" class="btn btn-info pull-left">retouner a la page précedente</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,65 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+  
+              <div class="row">
+                  <div class="col-sm-8"><h2> <b>Etat Audit</b></h2>  
+                  </div>
+                   
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title ">Liste des Audits</h4>
+                      
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                  <th>Id</th>
+                                  <th>Nom de l'auditeur</th>
+                                  <th>Nom du chauffeur</th>
+                                  <th>Date</th>
+                                  <th>Resultat</th>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let audit of data">
+                                      <td>{{ audit.id }}</td>
+                                      <td>{{ audit.nomAuditeur }}</td>
+                                      <td>{{ audit.personneAuditee }}</td>
+                                      <td>{{ audit.dateAudit | date:'dd/MM/yyyy' }}</td>
+                                      <td>{{ audit.resultat }}</td>
+                                        
+                                         
+                                          <a [routerLink]="['/ViewDetAudit']"  [queryParams]="{ commentaires:audit.commentaires,feux:audit.feux,maintenance:audit.maintenance,chaises:audit.chaises,pneux:audit.pneux,vitres:audit.vitres,assurance:audit.assurance,carteProfessionelle:audit.carteProfessionelle,contratLeoni:audit.contratLeoni,contratLeoni:audit.contratLeoni,horraires:audit.horraires,comportements:audit.comportements}"  data-toggle="tooltip">   
+                                              <i class="material-icons"><span class="material-symbols-outlined">
+                                                visibility
+                                                </span></i></a>
+            
+                                  </tr>
+                                 
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  

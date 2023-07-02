@@ -1,0 +1,36 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-info">
+              <h4 class="card-title">Ajouter une planification</h4>
+            </div>
+            <div class="card-body">
+              <form [formGroup]="chauffeurForm">
+                
+
+               
+                   
+                <div class="col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="reference de semaine" type="text" formControlName="refSemaine" required>
+                  </mat-form-field>
+                  <mat-error *ngIf="chauffeurForm.get('refSemaine').hasError('required')"></mat-error>
+                </div>
+                
+
+
+                <button mat-raised-button (click)="GetAll(chauffeurForm.controls['refSemaine'].value)" type="submit" class="btn btn-info pull-right">Ajouter la planification</button>
+                
+                <div class="clearfix"></div>
+              </form>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button routerLink="/PlanHebdoGlob" type="submit" class="btn btn-info pull-left">retouner a la page précedente</button>
+    </div>
+  </div>
+  

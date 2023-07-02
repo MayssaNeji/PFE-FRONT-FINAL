@@ -1,0 +1,74 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title">Ajouter une agence</h4>
+                       
+                    </div>
+                    <div class="card-body">
+                        <form  [formGroup]="chauffeurForm" >
+                            <div class="row">
+                                
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="nom" formControlName="nom">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="adresse"  formControlName="adresse">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                          
+                            <div class="row">
+                            
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput  placeholder="Téléphone" formControlName="telephone">
+                               
+                                </mat-form-field>
+                              </div>
+                           
+  
+  
+                         
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="matriculeFiscale" type="text"  formControlName="matriculeFiscale"  >
+                                  </mat-form-field>
+                                </div>
+                               
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Site Internet"  formControlName="siteInternet">
+                                </mat-form-field>
+                            </div>
+
+
+                            <div class="col-md-6">
+                              <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Email" formControlName="email">
+                              </mat-form-field>
+                          </div>
+                        
+                            
+  
+                           
+  
+                            <button mat-raised-button  (click)="updateChauf()"   type="submit" class="btn btn-info pull-right">Ajouter l'agence'</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <button mat-raised-button routerLink="/gestion-agence" type="submit" class="btn btn-info pull-left">retouner a la page précedente</button>
+    </div>
+  </div>
+  

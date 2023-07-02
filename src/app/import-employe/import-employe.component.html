@@ -1,0 +1,95 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+
+                <div class="card">
+                    <div class="card-header card-header-info">
+                      <h4 class="card-title">Importer la liste des employés</h4>
+                    </div>
+                 
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <mat-form-field class="example-full-width">
+                                <input type="file" #fileInput matInput >
+                              </mat-form-field>
+                              
+                            </div>
+                          
+                            <div class="col-md-4">
+                              <button mat-raised-button  (click)="upload(fileInput)" type="submit" class="btn btn-info pull-right">Importer</button>
+                            </div>
+                          
+                          </div>
+
+                        </div>
+                    
+                  </div>
+                  
+
+
+
+                   
+  
+  
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title ">Liste des chauffeurs</h4>
+                      
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                  <th>matricule</th>
+                                  <th>Nom</th>
+                                  <th>prenom</th>
+                                  <th>contreMaitre</th>
+                                  <th>nomDuGroupe</th>
+                                  <th>ps</th>
+                                  <th>telephone</th>
+                                  <th>centreDeCout</th>
+                                  <th>station</th>
+                                  <th>segment</th>
+                                  <th>shift</th>
+                                </thead>
+                                <tbody>
+                                  
+                                    <tr *ngFor="let chauffeur of data">
+                                        <td>{{ chauffeur.matricule }}</td>
+                                        <td>{{ chauffeur.nom }}</td>
+                                        <td>{{ chauffeur.prenom }}</td>
+                                        <td>{{ chauffeur.contreMaitre}}</td>
+                                        <td>{{ chauffeur.nomDuGroupe}}</td>
+                                        <td>{{ chauffeur.ps }}</td>
+                                        <td>{{ chauffeur.telephone }}</td>
+                                        <td>{{ chauffeur.centreDeCout }}</td>
+                                        <td>{{ chauffeur.station }}</td>
+                                        <td>{{ chauffeur.segment}}</td>
+                                        <td>{{ chauffeur.shift }}</td>
+                                        
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  

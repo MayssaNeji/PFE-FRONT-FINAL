@@ -1,0 +1,62 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title">Modifier l'utilisateur</h4>
+                   
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="chauffeurForm">
+                            <div class="row">
+                             
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Matricule" formControlName="matricule">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Email" type="text"formControlName="login">
+                                    </mat-form-field>
+                                  </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Nom" type="text"formControlName="nom">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Prenom" type="text"formControlName="prenom">
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Telephone" type="text"formControlName="tel">
+                                  </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="dateDeNaissance" type="date"formControlName="dateDeNaissance">
+                                  </mat-form-field>
+                                </div>
+                                
+                            </div>
+                            
+                            <button mat-raised-button type="submit" (click)="updateChauf()" class="btn btn-info pull-right">Modifier </button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <button mat-raised-button routerLink="/gestion-user"  type="submit" class="btn btn-info pull-left">retouner a la page précedente</button>
+    </div>
+  </div>
+  

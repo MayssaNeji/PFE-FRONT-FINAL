@@ -1,0 +1,153 @@
+
+<div class="main-content">
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-danger">
+          <h4 class="card-title">Audit</h4>
+        </div>
+        <div class="card-body">
+          <table class="table" [formGroup]="userForm" >
+            <tbody>
+          <tr>
+            <td rowspan="2"> <b>Etat Bus</b> </td>
+           
+          </tr>
+          <tr>
+            <td   >Feux d'arrière stop, route...</td>
+            <td formControlName="feux">{{feux}}</td>
+            
+          </tr>
+          <tr>
+            <td rowspan="2"> </td>
+           
+          </tr>
+          <tr>
+            <td>Nettoyer et maintenir la propreté.</td>
+            <td  formControlName="maintenance" >{{maintenance}}</td>
+            
+          </tr>
+
+              
+        
+        <tr>
+          <td rowspan="2"> </td>
+         
+        </tr>
+        <tr>
+          <td>	Controle des chaises.</td>
+          <td formControlName="chaises">{{chaises}}</td>
+          
+        </tr>
+
+
+
+    
+    <tr>
+      <td rowspan="2"> </td>
+     
+    </tr>
+    <tr>
+      <td>Controle des Pneux.</td>
+      <td formControlName="pneux">{{pneux}}</td>
+      
+    </tr>
+
+    <tr>
+        <td rowspan="2"> </td>
+       
+      </tr>
+      <tr>
+        <td>Etat des vitres.</td>
+        <td formControlName="vitres">{{vitres}}</td>
+        
+      </tr>
+  
+
+
+
+
+      <tr>
+        
+        <td rowspan="2"><b>Document exigence</b> </td>
+       
+      </tr>
+      <tr>
+        <td>Assurance.</td>
+        <td formControlName="assurance">{{assurance}}</td>
+        
+      </tr>
+      <tr>
+        <td rowspan="2"> </td>
+       
+      </tr>
+      <tr>
+        <td>Carte professionnelle</td>
+        <td formControlName="carteProfessionelle">{{carteProfessionelle}}</td>
+        
+      </tr>
+
+          
+    
+    <tr>
+      <td rowspan="2"> </td>
+     
+    </tr>
+    <tr>
+      <td>Contrat Leoni</td>
+      <td formControlName="contratLeoni">{{contratLeoni}}</td>
+      
+    </tr>
+
+
+    <tr>
+        
+        <td rowspan="2"> <b>CLimat Général</b></td>
+       
+      </tr>
+      <tr>
+        <td>Respect des horaires ramassage</td>
+        <td formControlName="horraires">{{horraires}}</td>
+        
+      </tr>
+      <tr>
+        <td rowspan="2"> </td>
+       
+      </tr>
+      <tr>
+        <td>Comportement et conduite des chauffeurs et collaborateurs Leoni</td>
+        <td formControlName="comportements">{{comportements}}</td>
+        
+      </tr>
+
+          
+      <tr>
+        
+        <td rowspan="2"> <b>Commentaire</b></td>
+       
+      </tr>
+      <tr>
+       
+        <td formControlName="commentaires">{{commentaires}}</td>
+        
+      </tr>
+      
+
+
+
+
+         
+
+            </tbody>
+          </table>
+
+
+          
+          
+
+        </div>
+      </div>
+    </div>
+</div>
+</div>

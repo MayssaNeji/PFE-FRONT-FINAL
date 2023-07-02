@@ -1,0 +1,76 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+  
+              <div class="row">
+                  <div class="col-sm-8"><h2> <b>Planification Hebdomadaire des segments</b></h2> <button mat-raised-button class="btn btn-warning pull-right"  routerLink="/AddSemaine">
+                        
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="19"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+                    <span>Ajouter une nouvelle planification</span>
+                  </button>
+
+                  <div >
+                    <button mat-raised-button class="btn btn-success pull-right" (click)="exportDataToExcel()">
+                      
+                      <i class="material-icons" viewBox="0 0 24 24" width="24" height="24">download</i><span>Exporter les Planifications</span>
+                        
+                      </button>
+                      </div>
+                  </div>
+  
+  
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title ">Liste des Planification Hebdomadaire des segments</h4>
+                      
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                  <th>Reference semaine</th>
+                                  <th>Segment</th>
+                                  <th>Nombre des employés</th>
+                                 
+                                 
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let PlanSegment of data">
+                                      <td>{{ PlanSegment.refSemaine }}</td>
+                                      <td>{{ PlanSegment.segment}}</td>
+                                      <td>{{ PlanSegment.matriculeCount  }}</td>
+                                     
+                                      <a [routerLink]="['/planSegment']"  [queryParams]="{ refSemaine:PlanSegment.refSemaine}"  data-toggle="tooltip">   
+                                        <i class="material-icons"><span class="material-symbols-outlined">
+                                          visibility
+                                          </span></i></a>
+
+
+
+                                  </tr>
+                                 
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  

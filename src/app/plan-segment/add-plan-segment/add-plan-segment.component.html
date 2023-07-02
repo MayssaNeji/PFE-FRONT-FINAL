@@ -1,0 +1,44 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-info">
+              <h4 class="card-title">Ajouter un employé à la planification</h4>
+            </div>
+            <div class="card-body">
+              <form [formGroup]="chauffeurForm">
+                <mat-form-field appearance="outline">
+                  <mat-label>Selectionner le segment</mat-label>
+                  <mat-select formControlName="segmentNavigation">
+                    <mat-option *ngFor="let agence of segment" [value]="agence.nom">{{agence.nom}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+  
+                <div>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Selectionner le matricule</mat-label>
+                    <mat-select formControlName="matriculeNavigation">
+                      <mat-option *ngFor="let agence of employe" [value]="agence.matricule">{{agence.matricule}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+               
+                   
+                
+
+
+
+                <button mat-raised-button (click)="Createchauf()" type="submit" class="btn btn-info pull-right">Ajouter l'employé</button>
+                
+                <div class="clearfix"></div>
+              </form>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button routerLink="/planSegment" type="submit" class="btn btn-info pull-left">retouner a la page précedente</button>
+    </div>
+  </div>
+  

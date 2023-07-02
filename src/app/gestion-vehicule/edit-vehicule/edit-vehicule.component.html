@@ -1,0 +1,72 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title">Modifier une véhicule</h4>
+                       
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="chauffeurForm">
+                            <div class="row">
+                                
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Type de véhicule"formControlName="type">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Numéro de série" formControlName="numSerie">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Nom de référence" type="text"formControlName="nomDeReference">
+                                  </mat-form-field>
+                                </div>
+                               
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput type="date" placeholder="Date de mise en route" formControlName="dateDeMiseEnRoute">
+                                 
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Capacité" type="text"formControlName="capacite">
+                                  </mat-form-field>
+                                </div>
+                               
+                            </div>
+                            
+                            
+                        
+
+                            <div>
+                              <mat-form-field appearance="outline">
+                                <mat-label>Selectionner une agence</mat-label>
+                                <mat-select  formControlName="agence">
+                                  <mat-option *ngFor="let agence of agences" [value]="agence.nom">{{agence.nom}}</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                              
+                                  
+                            </div>
+                           
+
+                            <button mat-raised-button type="submit" (click)="updateChauf()"  class="btn btn-info pull-right">Modifier la véhicule</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <button mat-raised-button routerLink="/gestion-vehicule" type="submit" class="btn btn-info pull-left">retouner a la page précedente</button>
+    </div>
+  </div>
+  

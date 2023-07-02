@@ -1,0 +1,83 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+  
+              <div class="row">
+                  <div class="col-sm-8"><h2> <b>véhicules</b></h2> <button mat-raised-button class="btn btn-warning pull-right"  routerLink="/add-vehicule">
+                        
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="19"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+                    <span>Ajouter</span>
+                  </button>
+
+                  <div >
+                    <button mat-raised-button class="btn btn-success pull-right" (click)="exportDataToExcel()">
+                      
+                      <i class="material-icons" viewBox="0 0 24 24" width="24" height="24">download</i><span>Exporter les véhicules</span>
+                        
+                      </button>
+                      </div>
+                  </div>
+  
+  
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title ">Liste des véhicules</h4>
+                   
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                  <th>Id</th>
+                                  <th>nomDeReference</th>
+                                  <th>Numero de serie</th>
+                                  <th>type</th>
+                                  <th>capacite</th>
+                                  <th>Date de mise en route</th>
+                                  <th>Agence</th>
+                                  
+                                 
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let vehicule of data">
+                                      <td>{{ vehicule.id }}</td>
+                                      <td>{{ vehicule.nomDeReference }}</td>
+                                      <td>{{ vehicule.numSerie}}</td>
+                                      <td>{{ vehicule.type }}</td>
+                                      <td>{{ vehicule.capacite}}</td>
+                                      <td>{{ vehicule.dateDeMiseEnRoute | date:'dd/MM/yyyy' }}</td>
+                                      <td>{{ vehicule.agence}}</td>
+                                        
+                                         
+                                          <a [routerLink]="['/EDITVEHICULE']"  [queryParams]="{ id:vehicule.id ,nomDeReference:vehicule.nomDeReference ,numSerie:vehicule.numSerie,type:vehicule.type,capacite:vehicule.capacite,dateDeMiseEnRoute:vehicule.dateDeMiseEnRoute,agence:vehicule.agence}"  class="edit" title="Edit" data-toggle="tooltip">   
+                                              <i class="material-icons">&#xE254;</i></a>
+              
+
+                                          <a routerLink="/gestion-vehicule" (click)="deleteItem(vehicule.id)" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                  </tr>
+                                 
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  

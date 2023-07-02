@@ -1,0 +1,86 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
+
+
+  
+    
+ 
+
+
+
+
+
+
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-info ">
+                      <h4 class="card-title">Ajouter une planification Hebdomadaire</h4>
+                      
+                  </div>
+                  <div class="card-body">
+                    <form  [formGroup]="PlanHebdo" >
+                          
+                         
+                          <div >
+                              
+                            <mat-form-field appearance="outline">
+                                <mat-label>Reference de semaine</mat-label>
+                                <mat-select formControlName="refSemaine">
+                                    <mat-option *ngFor="let year of refSemaines" [value]="year">{{ year }}</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                              
+                          </div>
+                          <div>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Année</mat-label>
+                              <mat-select formControlName="annee">
+                                <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </div>
+                          
+                          <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>mois</mat-label>
+                                <mat-select formControlName="mois">
+                                  <mat-option value="1">Janvier</mat-option>
+                                  <mat-option value="2">Février</mat-option>
+                                  <mat-option value="3">Mars</mat-option>
+                                  <mat-option value="4">Avril</mat-option>
+                                  <mat-option value="5">Mai</mat-option>
+                                  <mat-option value="6">Juin</mat-option>
+                                  <mat-option value="7">Juillet</mat-option>
+                                  <mat-option value="8">Août</mat-option>
+                                  <mat-option value="9">Septembre</mat-option>
+                                  <mat-option value="10">Octobre</mat-option>
+                                  <mat-option value="11">Novembre</mat-option>
+                                  <mat-option value="12">Décembre</mat-option>
+                                 
+
+                                </mat-select>
+                              </mat-form-field>
+                              
+                          </div>
+
+
+                          
+                          <button mat-raised-button type="submit" (click)="CreatePlan()"  class="btn btn-info pull-right" >Ajouter</button>
+                         
+                      </form>
+                  </div>
+              </div>
+          </div>
+         
+      </div>
+  </div>
+</div>
+
+
+
+
+
+

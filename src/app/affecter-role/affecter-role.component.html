@@ -1,0 +1,76 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+
+
+            <div class="row">
+                <div class="col-sm-12"><h2> <b>Affectation des Roles</b></h2> 
+                 
+
+
+              <div class="card">
+                  <div class="card-header card-header-info">
+                      <h4 class="card-title ">Liste des utilisateurs</h4>
+                    
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                <th>Login</th>
+                                <th>Id</th>
+                                <th>nom</th>
+                                <th>prenom</th>
+                                <th>matricule</th>
+                                <th>tel</th>
+                                <th>Date de naissance</th>
+                                <th>role</th>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let User of data">
+                                  <td>{{ User.login }}</td>
+                                    <td>{{ User.id }}</td>
+                                    <td>{{ User.nom }}</td>
+                                    <td>{{ User.prenom }}</td>
+                                    <td>{{ User.matricule }}</td>
+                                    <td>{{ User.tel}}</td>
+                                    <td>{{ User.dateDeNaissance | date:'dd/MM/yyyy' }}</td>
+                                    <td style="color:red;">{{ User.role}}</td>
+
+                                
+                                  
+                                      
+                                    <a [routerLink]="['/editRole']" [queryParams]="{ id: User.id ,nom: User.nom ,login:User.login,prenom:User.prenom,matricule:User.matricule,tel:User.tel,dateDeNaissance:User.dateDeNaissance }" class="edit" title="Edit" data-toggle="tooltip">
+                                        <i class="material-icons">&#xE254;</i>
+                                      </a>
+                                      
+                                          
+                                    
+            
+                                        <a routerLink="/affecterRole" (click)="deleteItem(chauffeur.id)" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                </tr>
+                               
+                                 
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+         
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+

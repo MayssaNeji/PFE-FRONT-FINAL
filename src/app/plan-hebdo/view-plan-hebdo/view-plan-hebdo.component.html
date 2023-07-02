@@ -1,0 +1,109 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+  
+              <div class="row">
+                  <div class="col-sm-8"><h2> <b>Details de la planification</b></h2> <button mat-raised-button class="btn btn-warning pull-right"  routerLink="/add-planSegment">
+                        
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="19"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+                    <span>Ajouter</span>
+                  </button>
+
+                  <div >
+                    <button mat-raised-button class="btn btn-success pull-right" (click)="exportDataToExcel()">
+                      
+                      <i class="material-icons" viewBox="0 0 24 24" width="24" height="24">download</i><span>Exporter les Planifications</span>
+                        
+                      </button>
+                      </div>
+                  </div>
+  
+  
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title ">Liste des la Planification Hebdomadaire </h4>
+                      
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                               
+                                  <th>Segment</th>
+                                  <th>matricule</th>
+                                  <th>Prenom</th>
+                                  <th>Nom</th>
+
+                                  <th>Station</th>
+                                  <th>Circuit</th>
+                                  <th>Organization</th>
+                                  <th>PS</th>
+                              
+                                  <th>Samedi</th>
+                                  <th>dimanche</th>
+                                  <th>lundi</th>
+                                  <th>mardi</th>
+                                  <th>mercredi</th>
+                                  <th>jeudi</th>
+                                  <th>vendredi</th>
+                                  <th>shift</th>
+                                 
+                                 
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let PlanSegment of data">
+                                   
+                                      <td>{{ PlanSegment.segment}}</td>
+                                      <td>{{ PlanSegment.matricule }}</td>
+                                      <td>{{ PlanSegment.prenom }}</td>
+                                      <td>{{ PlanSegment.nom }}</td>
+
+                                      <td>{{ PlanSegment.station}}</td>
+                                      <td>{{ PlanSegment.circuit }}</td>
+                                      <td>{{ PlanSegment.organization }}</td>
+                                      <td>{{ PlanSegment.ps }}</td>
+
+                                      <td>{{ PlanSegment.samedi}}</td>
+                                      <td>{{ PlanSegment.dimanche }}</td>
+                                      <td>{{ PlanSegment.lundi}}</td>
+                                      <td>{{ PlanSegment.mardi}}</td>
+                                      <td>{{ PlanSegment.mercredi}}</td>
+                                      <td>{{ PlanSegment.jeudi}}</td>
+                                      <td>{{ PlanSegment.vendredi}}</td>
+                                      <td>{{ PlanSegment.shift}}</td>
+                                      
+                                        
+                                      
+                                         
+              
+                                            
+                                      
+              
+                                          <a routerLink="/PlanSegment" (click)="deleteItem(PlanSegment.id)" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                  </tr>
+                                 
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  

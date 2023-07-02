@@ -1,0 +1,101 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+
+
+
+  
+        <div class="row">
+            <div class="col-sm-8"><h2> <b>Employés</b></h2>
+              
+              <button mat-raised-button class="btn btn-warning pull-right"  routerLink="/add-employe">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="19"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+                  <span>Ajouter</span>
+                </button>
+
+                <div >
+                  <button mat-raised-button class="btn btn-success pull-right" (click)="exportDataToExcel()">
+                    
+                    <i class="material-icons" viewBox="0 0 24 24" width="24" height="24">download</i>
+                    <span>Exporter les employés</span>
+                    
+                  </button>
+                </div>
+            </div>
+
+
+        <div class="card">
+          <div class="card-header card-header-info">
+            <h4 class="card-title">Liste des employés</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <th>matricule</th>
+                  <th>Nom</th>
+                  <th>prenom</th>
+                  <th>contreMaitre</th>
+                  <th>nomDuGroupe</th>
+                  <th>ps</th>
+                  <th>telephone</th>
+                  <th>centreDeCout</th>
+                  <th>station</th>
+                  <th>segment</th>
+                  <th>shift</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let chauffeur of data">
+                    <td>{{ chauffeur.matricule }}</td>
+                    <td>{{ chauffeur.nom }}</td>
+                    <td>{{ chauffeur.prenom }}</td>
+                    <td>{{ chauffeur.contreMaitre }}</td>
+                    <td>{{ chauffeur.nomDuGroupe }}</td>
+                    <td>{{ chauffeur.ps }}</td>
+                    <td>{{ chauffeur.telephone }}</td>
+                    <td>{{ chauffeur.centreDeCout }}</td>
+                    <td>{{ chauffeur.station }}</td>
+                    <td>{{ chauffeur.segment }}</td>
+                    <td>{{ chauffeur.shift }}</td>
+
+                    <a
+                      [routerLink]="['/editEmploye']"
+                      class="edit"
+                      [queryParams]="{
+                        matricule: chauffeur.matricule,
+                        nom: chauffeur.nom,
+                        prenom: chauffeur.prenom,
+                        contreMaitre: chauffeur.contreMaitre,
+                        nomDuGroupe: chauffeur.nomDuGroupe,
+                        ps: chauffeur.ps,
+                        telephone: chauffeur.telephone,
+                        centreDeCout: chauffeur.centreDeCout,
+                        station: chauffeur.station,
+                        segment: chauffeur.segment,
+                        shift: chauffeur.shift
+                      }"
+                      title="Edit"
+                      data-toggle="tooltip"
+                    >
+                      <i class="material-icons">&#xE254;</i>
+                    </a>
+
+                    <a
+                      routerLink="/gestion-employe"
+                      (click)="deleteItem(chauffeur.matricule)"
+                      title="Delete"
+                      data-toggle="tooltip"
+                      ><i class="material-icons">&#xE872;</i></a
+                    >
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

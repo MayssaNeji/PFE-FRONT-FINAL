@@ -1,0 +1,84 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+  
+              <div class="row">
+                  <div class="col-sm-8"><h2> <b>Agences</b></h2>  <button mat-raised-button class="btn btn-warning pull-right"  routerLink="/add-agence">
+                        
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="19"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+                    <span>Add</span>
+                  </button>
+
+                  <div >
+                    <button mat-raised-button class="btn btn-success pull-right" (click)="exportDataToExcel()">
+                      
+                      <i class="material-icons" viewBox="0 0 24 24" width="24" height="24">download</i>
+                      <span>Exporter les Agences</span>
+                        
+                      </button>
+                      </div>
+                  </div>
+  
+  
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title ">Liste des agences</h4>
+                  
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                              
+                                  <th>nom</th>
+                                  <th>adresse</th>
+                                  <th>Téléphone</th>
+                                  <th>matriculeFiscale</th>
+                                  <th>siteInternet</th>
+                                  <th>Email</th>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let agence of data">
+                                    
+                                      <td>{{ agence.nom }}</td>
+                                      <td>{{ agence.adresse }}</td>
+                                      <td>{{ agence.telephone }}</td>
+                                      <td>{{ agence.matriculeFiscale}}</td>
+                                      <td>{{ agence.siteInternet  }}</td>
+                                      <td>{{ agence.email}}</td>
+                                        
+                                         
+                                        
+                                      <a [routerLink]="['/editAgence']" [queryParams]="{ nom: agence.nom ,
+                                        adresse:agence.adresse,Id:agence.id, telephone:agence.telephone,matriculeFiscale:agence.matriculeFiscale,
+                                        siteInternet:agence.siteInternet,email:agence.email }"  class="edit" title="Edit" data-toggle="tooltip">   
+                                        <i class="material-icons">&#xE254;</i></a>
+        
+                                          <a routerLink="/gestion-agence" (click)="deleteItem(agence.nom)" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                  </tr>
+                                 
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  

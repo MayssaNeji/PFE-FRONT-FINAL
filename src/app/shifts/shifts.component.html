@@ -1,0 +1,92 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+  
+              <div class="row">
+                  <div class="col-sm-8"><h2> <b>Shifts</b></h2>  <button mat-raised-button class="btn btn-warning pull-right"  routerLink="/add-shift">
+                      
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="19"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+                      <span>Ajouter</span>
+                    </button>
+  
+                    <div >
+                      <button mat-raised-button class="btn btn-success pull-right" (click)="exportDataToExcel()">
+                        
+                        <i class="material-icons" viewBox="0 0 24 24" width="24" height="24">download</i>
+                        <span>Exporter les Shits </span>
+                        
+                      </button>
+                      </div>
+                  </div>
+                   
+  
+  
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title ">Liste des shifts</h4>
+                      
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                  <th>Reference</th>
+                                  <th>lundi</th>
+                                  <th>mardi</th>
+                                  <th>mercredi</th>
+                                  <th>jeudi</th>
+                                  <th>vendredi</th>
+                                  <th>samedi</th>
+                                  <th>dimanche</th>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let chauffeur of data">
+                                      <td>{{ chauffeur.referenceShift }}</td>
+                                      <td>{{ chauffeur.lundi }}</td>
+                                      <td>{{ chauffeur.mardi }}</td>
+                                      <td>{{ chauffeur.mercredi}}</td>
+                                      <td>{{ chauffeur.jeudi  }}</td>
+                                      <td>{{ chauffeur.vendredi }}</td>
+                                      <td>{{ chauffeur.samedi }}</td>
+                                      <td>{{ chauffeur.dimanche }}</td>
+                                        
+                                         
+                                     <a [routerLink]="['/editShift']" [queryParams]="{ referenceShift: chauffeur.referenceShift ,lundi:chauffeur.lundi,
+                                        mardi:chauffeur.mardi,mercredi:chauffeur.mercredi,jeudi:chauffeur.jeudi,
+                                        vendredi:chauffeur.vendredi,samedi:chauffeur.samedi,dimanche:chauffeur.dimanche }"  class="edit" title="Edit" data-toggle="tooltip">   
+                                      <i class="material-icons">&#xE254;</i></a>
+      
+              
+                                            
+                                      
+              
+                                          <a routerLink="/shifts" (click)="deleteItem(chauffeur.referenceShift)" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                  </tr>
+                                 
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  
